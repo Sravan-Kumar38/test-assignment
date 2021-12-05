@@ -15,3 +15,38 @@ test("Creating an item", async () => {
     quality: quality,
   });
 });
+
+test("Generating item list", async () => {
+  const bookData = {
+    "Sulfuras, Hand of Ragnaros": {
+      sell_in: 10,
+      quality: 20,
+    },
+    "Backstage passes to a TAFKAL80ETC concert": {
+      sell_in: 20,
+      quality: 10,
+    },
+  };
+
+  expect(generateItems(bookData)).toHaveLength(2);
+});
+
+test("Creating an item", async () => {
+  const bookList1 = [
+    { name: "Sulfuras, Hand of Ragnaros", sell_in: 10, quality: 20 },
+    {
+      name: "Backstage passes to a TAFKAL80ETC concert",
+      sell_in: 20,
+      quality: 10,
+    },
+  ];
+  update_quality(bookList1);
+  expect(bookList1).toStrictEqual([
+    { name: "Sulfuras, Hand of Ragnaros", sell_in: 10, quality: 20 },
+    {
+      name: "Backstage passes to a TAFKAL80ETC concert",
+      sell_in: 19,
+      quality: 11,
+    },
+  ]);
+});
