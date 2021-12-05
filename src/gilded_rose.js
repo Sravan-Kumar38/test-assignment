@@ -1,3 +1,10 @@
+const book1 = "+5 Dexterity Vest";
+const book2 = "Aged Brie";
+const book3 = "Elixir of the Mongoose";
+const book4 = "Sulfuras, Hand of Ragnaros";
+const book5 = "Backstage passes to a TAFKAL80ETC concert";
+const book6 = "Conjured Mana Cake";
+
 const bookData = {
   [book1]: {
     sell_in: 10,
